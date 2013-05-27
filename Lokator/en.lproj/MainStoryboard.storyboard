@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RVs-KZ-oDJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -17,94 +17,176 @@
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="64" maxX="0.0" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="XoQ-53-2hn">
                                     <size key="itemSize" width="160" height="64"/>
-                                    <size key="headerReferenceSize" width="320" height="64"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Label" id="qyz-CN-2hU">
-                                        <rect key="frame" x="0.0" y="64" width="160" height="64"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Label" id="qyz-CN-2hU" customClass="MapCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="v0y-3V-FCb"/>
+                                                <view alpha="0.50000000000000011" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WO7-zk-v12">
+                                                    <color key="backgroundColor" red="0.97254908080000002" green="0.90588241820000004" blue="0.90588241820000004" alpha="1" colorSpace="deviceRGB"/>
+                                                </view>
+                                                <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qgg-VW-9FT">
+                                                    <color key="backgroundColor" red="0.66666668650000005" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                                </view>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Qgg-VW-9FT" firstAttribute="top" secondItem="qyz-CN-2hU" secondAttribute="top" constant="8" id="38X-ZT-kZV"/>
+                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="top" secondItem="qyz-CN-2hU" secondAttribute="top" type="default" id="5Jd-BW-ASY"/>
+                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="centerX" secondItem="Qgg-VW-9FT" secondAttribute="centerX" type="default" id="6Ii-5e-yMU"/>
+                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="trailing" secondItem="qyz-CN-2hU" secondAttribute="trailing" type="default" id="JGy-vJ-rSV"/>
+                                            <constraint firstItem="WO7-zk-v12" firstAttribute="top" secondItem="qyz-CN-2hU" secondAttribute="top" type="default" id="K5e-Gr-wfh"/>
+                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="centerY" secondItem="Qgg-VW-9FT" secondAttribute="centerY" type="default" id="cZe-bo-VB3"/>
+                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="leading" secondItem="qyz-CN-2hU" secondAttribute="leading" type="default" id="eud-Em-pEY"/>
+                                            <constraint firstItem="WO7-zk-v12" firstAttribute="trailing" secondItem="qyz-CN-2hU" secondAttribute="trailing" type="default" id="f8p-Qo-KFu"/>
+                                            <constraint firstItem="Qgg-VW-9FT" firstAttribute="leading" secondItem="qyz-CN-2hU" secondAttribute="leading" constant="56" id="ms4-CG-8Pn"/>
+                                            <constraint firstItem="WO7-zk-v12" firstAttribute="bottom" secondItem="qyz-CN-2hU" secondAttribute="bottom" type="default" id="nyY-3c-KJD"/>
+                                            <constraint firstItem="WO7-zk-v12" firstAttribute="leading" secondItem="qyz-CN-2hU" secondAttribute="leading" type="default" id="yKe-rW-Dh7"/>
+                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="bottom" secondItem="qyz-CN-2hU" secondAttribute="bottom" type="default" id="yno-OU-wdt"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="icon" destination="Qgg-VW-9FT" id="J3l-wy-7QT"/>
+                                            <outlet property="image" destination="v0y-3V-FCb" id="BNS-vp-AqI"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="t60-FL-h6Y">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="2" id="yXf-D9-8bn"/>
                                     <outlet property="delegate" destination="2" id="MmO-8s-yYX"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8c-Ow-9UZ">
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lokator" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bi4-Ug-19V">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="304" id="clA-Xd-jrv"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="44"/>
-                                        <color key="textColor" red="0.97254908080000002" green="0.90588241820000004" blue="0.90588241820000004" alpha="1" colorSpace="deviceRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHk-ZU-BIF">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="GHz-4m-YuI"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="record:" destination="2" eventType="touchUpInside" id="tA9-H8-HfS"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.66666668650000005" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                                <constraints>
-                                    <constraint firstItem="bi4-Ug-19V" firstAttribute="trailing" secondItem="c8c-Ow-9UZ" secondAttribute="trailing" type="default" id="25O-af-zhX"/>
-                                    <constraint firstItem="bi4-Ug-19V" firstAttribute="bottom" secondItem="c8c-Ow-9UZ" secondAttribute="bottom" type="default" id="2Eg-qm-bQR"/>
-                                    <constraint firstItem="bi4-Ug-19V" firstAttribute="top" secondItem="c8c-Ow-9UZ" secondAttribute="top" type="default" id="DUh-bF-Rsy"/>
-                                    <constraint firstItem="uHk-ZU-BIF" firstAttribute="trailing" secondItem="c8c-Ow-9UZ" secondAttribute="trailing" type="default" id="LzW-eo-aOe"/>
-                                    <constraint firstItem="uHk-ZU-BIF" firstAttribute="top" secondItem="c8c-Ow-9UZ" secondAttribute="top" type="default" id="Xrd-f8-eOD"/>
-                                    <constraint firstItem="uHk-ZU-BIF" firstAttribute="bottom" secondItem="c8c-Ow-9UZ" secondAttribute="bottom" type="default" id="caw-ch-mau"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97254908080000002" green="0.90588241820000004" blue="0.90588241820000004" alpha="1" colorSpace="deviceRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="F59-AJ-rKi" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="7Yh-WV-tFo"/>
                             <constraint firstItem="F59-AJ-rKi" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="GIh-Gf-NkM"/>
-                            <constraint firstItem="c8c-Ow-9UZ" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="HCo-Dq-3ZD"/>
-                            <constraint firstItem="c8c-Ow-9UZ" firstAttribute="top" secondItem="3" secondAttribute="top" type="user" id="Jkg-my-kDh"/>
                             <constraint firstItem="F59-AJ-rKi" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="WrJ-A7-q41"/>
-                            <constraint firstItem="c8c-Ow-9UZ" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="user" id="b0k-V0-Gr5"/>
                             <constraint firstItem="F59-AJ-rKi" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="eTB-Hw-EFv"/>
-                            <constraint firstAttribute="bottom" secondItem="c8c-Ow-9UZ" secondAttribute="bottom" constant="416" id="ueJ-Rr-Khq"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="oL8-YG-qyG" appends="YES" id="sTK-QI-vGc"/>
+                        </connections>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="oL8-YG-qyG">
+                    <connections>
+                        <action selector="dismiss:" destination="2" id="M0c-QG-lof"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="720" y="76"/>
+        </scene>
+        <!--Record View Controller-->
+        <scene sceneID="w98-I7-CPe">
+            <objects>
+                <viewController id="RVs-KZ-oDJ" customClass="RecordViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hS2-Aj-VRQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-Um-Vhe"/>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvP-y1-aYh" userLabel="Record Dot">
+                                <color key="backgroundColor" red="0.66666668650000005" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geL-eb-dJd">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OvP-y1-aYh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7J3-kd-wl8"/>
+                            <constraint firstItem="2ho-Um-Vhe" firstAttribute="trailing" secondItem="hS2-Aj-VRQ" secondAttribute="trailing" type="default" id="AuG-RG-ixS"/>
+                            <constraint firstItem="2ho-Um-Vhe" firstAttribute="top" secondItem="hS2-Aj-VRQ" secondAttribute="top" type="default" id="BHh-bJ-9hO"/>
+                            <constraint firstItem="OvP-y1-aYh" firstAttribute="top" secondItem="hS2-Aj-VRQ" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Lzc-Ug-uOe"/>
+                            <constraint firstItem="geL-eb-dJd" firstAttribute="trailing" secondItem="hS2-Aj-VRQ" secondAttribute="trailing" type="default" id="QCf-W8-afV"/>
+                            <constraint firstItem="2ho-Um-Vhe" firstAttribute="leading" secondItem="hS2-Aj-VRQ" secondAttribute="leading" type="default" id="WhQ-w2-QhI"/>
+                            <constraint firstItem="geL-eb-dJd" firstAttribute="bottom" secondItem="hS2-Aj-VRQ" secondAttribute="bottom" type="default" id="cZY-M9-ajd"/>
+                            <constraint firstItem="geL-eb-dJd" firstAttribute="top" secondItem="hS2-Aj-VRQ" secondAttribute="top" type="default" id="nFN-Lm-Og5"/>
+                            <constraint firstItem="geL-eb-dJd" firstAttribute="leading" secondItem="hS2-Aj-VRQ" secondAttribute="leading" type="default" id="owQ-Lk-AtT"/>
+                            <constraint firstItem="OvP-y1-aYh" firstAttribute="leading" secondItem="hS2-Aj-VRQ" secondAttribute="leading" constant="284" id="qhi-8Q-dhz"/>
+                            <constraint firstItem="2ho-Um-Vhe" firstAttribute="bottom" secondItem="hS2-Aj-VRQ" secondAttribute="bottom" type="default" id="u7C-gt-GJK"/>
+                            <constraint firstAttribute="bottom" secondItem="OvP-y1-aYh" secondAttribute="bottom" constant="444" id="v0M-8q-FqR"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="RE8-bs-bvW" appends="YES" id="1aZ-dj-rfv"/>
+                            <outletCollection property="gestureRecognizers" destination="pUU-Gz-PEO" appends="YES" id="y7I-dl-k2I"/>
+                            <outletCollection property="gestureRecognizers" destination="T0L-8q-bgr" appends="YES" id="uf6-uM-YJy"/>
+                        </connections>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="recordButton" destination="uHk-ZU-BIF" id="IpJ-hA-lOH"/>
+                        <outlet property="doubleTap" destination="RE8-bs-bvW" id="VNJ-l0-tCj"/>
+                        <outlet property="recordDot" destination="OvP-y1-aYh" id="5mA-ca-Qwb"/>
+                        <outlet property="swipeUp" destination="T0L-8q-bgr" id="7E6-qr-98Q"/>
+                        <outlet property="trippleTap" destination="pUU-Gz-PEO" id="Jyj-mb-1c7"/>
+                        <outlet property="upperView" destination="geL-eb-dJd" id="21r-Kk-M4y"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9NP-Gb-p8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="RE8-bs-bvW" userLabel="Double Tap">
+                    <connections>
+                        <action selector="doubleTap:" destination="RVs-KZ-oDJ" id="ali-0p-UpZ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="3" id="pUU-Gz-PEO" userLabel="Tripple Tap">
+                    <connections>
+                        <action selector="trippleTap:" destination="RVs-KZ-oDJ" id="Sjx-6u-FJP"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="T0L-8q-bgr">
+                    <connections>
+                        <segue destination="2" kind="modal" id="Pxk-Xr-ZVu"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="227" y="76"/>
         </scene>
     </scenes>
     <classes>
+        <class className="MapCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="icon" candidateClass="UIView"/>
+                <relationship kind="outlet" name="image" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RecordViewController" superclassName="RoundedViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecordViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dismiss:"/>
+                <relationship kind="action" name="doubleTap:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="action" name="trippleTap:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="doubleTap" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="recordDot" candidateClass="UIView"/>
+                <relationship kind="outlet" name="swipeUp" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="trippleTap" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="upperView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="RoundedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoundedViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dismiss:"/>
+            </relationships>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
@@ -115,13 +197,9 @@
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
+        <class className="ViewController" superclassName="RoundedViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="record:"/>
                 <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
             </relationships>
         </class>

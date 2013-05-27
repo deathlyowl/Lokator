@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+Hex.h"
+#import "MapCell.h"
 
 @implementation ViewController
 
@@ -53,13 +54,26 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 30;
+    return 1;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                  cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Label"
+    MapCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Label"
                                                                            forIndexPath:indexPath];
+    
+    [cell.image setImage:[UIImage imageNamed:@"map"]];
+    
+    [cell.icon.layer setCornerRadius:24];
+    
+    // Create your mask layer
+    CALayer* maskLayer = [CALayer layer];
+    maskLayer.frame = CGRectMake(0,0,48 ,48);
+    maskLayer.contents = (__bridge id)[[UIImage imageNamed:@"marker.png"] CGImage];
+    
+    // Apply the mask to your uiview layer
+    cell.icon.layer.mask = maskLayer;
+    
     return cell;
 }
 
@@ -71,6 +85,22 @@
 
 - (IBAction)record:(id)sender {
     NSLog(@"Record!");
+   /*
+    MKMapPoint mapPoint = MKMapPointForCoordinate(CLLocationCoordinate2DMake(53.95, 14.3));
+    
+//    MKMapView *map = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+    
+    [map setVisibleMapRect:MKMapRectMake(mapPoint.x, mapPoint.y, 100000, 100000) animated:NO];
+    
+    
+    UIGraphicsBeginImageContext(map.frame.size);
+    [map.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *mapImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSData *mapData = UIImagePNGRepresentation(mapImage);
+    [mapData writeToFile:@"/Users/xehivs/Desktop/map.png" atomically:YES];
+    */
 }
 
 
