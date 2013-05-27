@@ -11,6 +11,7 @@
 
 @interface Animator : NSObject
 
++ (CABasicAnimation *) appear;
 + (CABasicAnimation *) disappear;
 + (CABasicAnimation *) flash;
 + (CABasicAnimation *) blink;

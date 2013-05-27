@@ -22,7 +22,7 @@
 #pragma mark Collection
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 3;
+    return [[Library sharedLibrary] elements].count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -30,17 +30,11 @@
     MapCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Label"
                                                                            forIndexPath:indexPath];
     
-    [cell.image setImage:[UIImage imageNamed:@"map"]];
-    [cell.icon setCornerRadius:24];
+    CLLocation *location = [[[Library sharedLibrary] elements] objectAtIndex:[Library.sharedLibrary.elements count] - indexPath.row - 1];
     
-    switch (rand()%2) {
-        case 0:
-            [cell.icon setMaskFromImage:[UIImage imageNamed:@"marker.png"]];
-            break;
-        default:
-            [cell.icon setMaskFromImage:[UIImage imageNamed:@"mapMarker.png"]];
-            break;
-    }
+    [cell.image setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%.0f.png", [Library applicationDocumentsDirectory], location.timestamp.timeIntervalSince1970]]];
+    [cell.icon setCornerRadius:24];
+    [cell.icon setMaskFromImage:[UIImage imageNamed:@"marker.png"]];
     
     return cell;
 }

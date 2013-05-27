@@ -14,10 +14,14 @@
 @interface RecordViewController : RoundedViewController <CLLocationManagerDelegate> {
     CLLocationManager *locationManager;
     
-    IBOutlet UIView *recordDot, *upperView, *splash;
+    CLLocation *currentLocation;
+    
+    IBOutlet UIView *recordDot, *upperView, *splash, *pointer;
     IBOutlet UITapGestureRecognizer *doubleTap, *trippleTap;
     IBOutlet UISwipeGestureRecognizer *swipeUp;
     IBOutlet MKMapView *map;
+    
+    
     BOOL recording;
 }
 

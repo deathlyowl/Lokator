@@ -10,10 +10,22 @@
 
 @implementation Animator
 
+
++ (CABasicAnimation *)appear{
+    CABasicAnimation *appear = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    appear.fromValue = [NSNumber numberWithFloat:0];
+    appear.toValue = [NSNumber numberWithFloat:.9];
+    appear.duration = 1;        // 1 second
+    appear.autoreverses = NO;    // Back
+    appear.repeatCount = 1;
+    
+    return appear;
+}
+
 + (CABasicAnimation *)disappear{
     CABasicAnimation *disappear = [CABasicAnimation animationWithKeyPath:@"opacity"];
     disappear.fromValue = [NSNumber numberWithFloat:1.0];
-    disappear.toValue = [NSNumber numberWithFloat:0.0];
+    disappear.toValue = [NSNumber numberWithFloat:0.15];
     disappear.duration = 1;        // 1 second
     disappear.autoreverses = NO;    // Back
     disappear.repeatCount = 1;
@@ -30,6 +42,7 @@
     
     return flash;
 }
+
 
 + (CABasicAnimation *)blink{
     CABasicAnimation *blink = [CABasicAnimation animationWithKeyPath:@"opacity"];

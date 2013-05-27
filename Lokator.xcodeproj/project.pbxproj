@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FA12F5AF1753C3DE000BB462 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA12F5AE1753C3DE000BB462 /* RecordViewController.m */; };
 		FA12F5B21753C44A000BB462 /* RoundedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA12F5B11753C44A000BB462 /* RoundedViewController.m */; };
+		FA189F9A17540C9100B0D455 /* Library.m in Sources */ = {isa = PBXBuildFile; fileRef = FA189F9917540C9100B0D455 /* Library.m */; };
 		FA381DAF1753B3F300BA9C9E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA381DAE1753B3F300BA9C9E /* MapKit.framework */; };
 		FA381DB51753B54000BA9C9E /* MapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA381DB41753B54000BA9C9E /* MapCell.m */; };
 		FA381DB71753BA8600BA9C9E /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = FA381DB61753BA8600BA9C9E /* marker.png */; };
@@ -18,6 +19,7 @@
 		FA6194241753F61E00529E6F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6194231753F61E00529E6F /* Default.png */; };
 		FA6194271753F64100529E6F /* Animator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6194261753F64100529E6F /* Animator.m */; };
 		FA61942C1753FC4E00529E6F /* UIView+MagicViews.m in Sources */ = {isa = PBXBuildFile; fileRef = FA61942B1753FC4E00529E6F /* UIView+MagicViews.m */; };
+		FA61942E1754075500529E6F /* markerAlt.png in Resources */ = {isa = PBXBuildFile; fileRef = FA61942D1754075500529E6F /* markerAlt.png */; };
 		FAD3E99F1753A91400618FFD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E99E1753A91400618FFD /* UIKit.framework */; };
 		FAD3E9A11753A91400618FFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E9A01753A91400618FFD /* Foundation.framework */; };
 		FAD3E9A31753A91400618FFD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E9A21753A91400618FFD /* CoreGraphics.framework */; };
@@ -39,6 +41,8 @@
 		FA12F5AE1753C3DE000BB462 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		FA12F5B01753C44A000BB462 /* RoundedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedViewController.h; sourceTree = "<group>"; };
 		FA12F5B11753C44A000BB462 /* RoundedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedViewController.m; sourceTree = "<group>"; };
+		FA189F9817540C9100B0D455 /* Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Library.h; sourceTree = "<group>"; };
+		FA189F9917540C9100B0D455 /* Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Library.m; sourceTree = "<group>"; };
 		FA381DAE1753B3F300BA9C9E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FA381DB31753B54000BA9C9E /* MapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapCell.h; path = ../MapCell.h; sourceTree = "<group>"; };
 		FA381DB41753B54000BA9C9E /* MapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapCell.m; path = ../MapCell.m; sourceTree = "<group>"; };
@@ -51,6 +55,7 @@
 		FA6194261753F64100529E6F /* Animator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animator.m; sourceTree = "<group>"; };
 		FA61942A1753FC4E00529E6F /* UIView+MagicViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+MagicViews.h"; path = "Lokator/UIView+MagicViews.h"; sourceTree = "<group>"; };
 		FA61942B1753FC4E00529E6F /* UIView+MagicViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+MagicViews.m"; path = "Lokator/UIView+MagicViews.m"; sourceTree = "<group>"; };
+		FA61942D1754075500529E6F /* markerAlt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markerAlt.png; sourceTree = "<group>"; };
 		FAD3E99B1753A91400618FFD /* Lokator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lokator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD3E99E1753A91400618FFD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAD3E9A01753A91400618FFD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -154,6 +159,8 @@
 			children = (
 				FAD3E9AD1753A91400618FFD /* AppDelegate.h */,
 				FAD3E9AE1753A91400618FFD /* AppDelegate.m */,
+				FA189F9817540C9100B0D455 /* Library.h */,
+				FA189F9917540C9100B0D455 /* Library.m */,
 				FA6194281753FA7700529E6F /* Controller */,
 				FA6194291753FA8D00529E6F /* View */,
 				FAD3E9A51753A91400618FFD /* Supporting Files */,
@@ -164,6 +171,7 @@
 		FAD3E9A51753A91400618FFD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA61942D1754075500529E6F /* markerAlt.png */,
 				FA6194231753F61E00529E6F /* Default.png */,
 				FA61941F1753E0C400529E6F /* Icon.png */,
 				FAD3E9A61753A91400618FFD /* Lokator-Info.plist */,
@@ -241,6 +249,7 @@
 				FA6194201753E0C400529E6F /* Icon.png in Resources */,
 				FA6194221753E47C00529E6F /* mapMarker.png in Resources */,
 				FA6194241753F61E00529E6F /* Default.png in Resources */,
+				FA61942E1754075500529E6F /* markerAlt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +269,7 @@
 				FA12F5B21753C44A000BB462 /* RoundedViewController.m in Sources */,
 				FA6194271753F64100529E6F /* Animator.m in Sources */,
 				FA61942C1753FC4E00529E6F /* UIView+MagicViews.m in Sources */,
+				FA189F9A17540C9100B0D455 /* Library.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
