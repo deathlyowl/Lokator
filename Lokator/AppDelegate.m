@@ -13,8 +13,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    self.window.layer.cornerRadius = 32;
-    self.window.clipsToBounds = YES;
     return YES;
 }
 

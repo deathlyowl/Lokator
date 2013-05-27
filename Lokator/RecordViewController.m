@@ -9,6 +9,7 @@
 #import "RecordViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+Hex.h"
+#import "Animator.h"
 
 @implementation RecordViewController
 
@@ -23,20 +24,34 @@
     [self.view.layer setBorderColor:[UIColor clearColor].CGColor];
     
     [doubleTap requireGestureRecognizerToFail:trippleTap];
+    
+    
+    // Create your mask layer
+    CALayer* maskLayer = [CALayer layer];
+    maskLayer.frame = CGRectMake(0,0,48 ,48);
+    maskLayer.contents = (__bridge id)[[UIImage imageNamed:@"marker.png"] CGImage];
+    
+    // Apply the mask to your uiview layer
+    splash.layer.mask = maskLayer;
+    splash.layer.cornerRadius = 24;
+    
 
     [super viewDidLoad];
 }
 
-- (IBAction)doubleTap:(UITapGestureRecognizer *)sender {
-    if (!recording) {
-        CABasicAnimation *flash = [CABasicAnimation animationWithKeyPath:@"opacity"];
-        flash.fromValue = [NSNumber numberWithFloat:0.0];
-        flash.toValue = [NSNumber numberWithFloat:1.0];
-        flash.duration = .125;        // 1 second
-        flash.autoreverses = YES;    // Back
-        
-        [upperView.layer addAnimation:flash forKey:@"flashAnimation"];
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    if (!animated) {
+        splash.layer.opacity = 0;
+        [splash.layer addAnimation:[Animator disappear] forKey:@"disappearAnimation"];
     }
+    
+}
+
+- (IBAction)doubleTap:(UITapGestureRecognizer *)sender {
+    if (!recording) [upperView.layer addAnimation:[Animator flash]
+                                           forKey:@"flashAnimation"];
 }
 
 - (IBAction)trippleTap:(UITapGestureRecognizer *)sender {

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import "RoundedViewController.h"
 
 @interface RecordViewController : RoundedViewController {
@@ -14,7 +15,8 @@
     IBOutlet UIView *upperView;
     IBOutlet UITapGestureRecognizer *doubleTap, *trippleTap;
     IBOutlet UISwipeGestureRecognizer *swipeUp;
-    
+    IBOutlet UIView *splash;
+    IBOutlet MKMapView *map;
     BOOL recording;
 }
 

@@ -4,17 +4,17 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--List View Controller-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="ListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F59-AJ-rKi">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <inset key="scrollIndicatorInsets" minX="0.0" minY="64" maxX="0.0" maxY="0.0"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-2" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="XoQ-53-2hn">
                                     <size key="itemSize" width="160" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -102,6 +102,9 @@
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvP-y1-aYh" userLabel="Record Dot">
                                 <color key="backgroundColor" red="0.66666668650000005" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avk-ux-P1o">
+                                <color key="backgroundColor" red="0.66666668650000005" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geL-eb-dJd">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -110,17 +113,21 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="OvP-y1-aYh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7J3-kd-wl8"/>
-                            <constraint firstItem="2ho-Um-Vhe" firstAttribute="trailing" secondItem="hS2-Aj-VRQ" secondAttribute="trailing" type="default" id="AuG-RG-ixS"/>
+                            <constraint firstItem="Avk-ux-P1o" firstAttribute="centerX" secondItem="2ho-Um-Vhe" secondAttribute="centerX" type="default" id="Akc-QW-i1P"/>
                             <constraint firstItem="2ho-Um-Vhe" firstAttribute="top" secondItem="hS2-Aj-VRQ" secondAttribute="top" type="default" id="BHh-bJ-9hO"/>
+                            <constraint firstItem="Avk-ux-P1o" firstAttribute="top" secondItem="hS2-Aj-VRQ" secondAttribute="top" constant="216" id="F4d-go-AAe"/>
+                            <constraint firstItem="Avk-ux-P1o" firstAttribute="centerX" secondItem="hS2-Aj-VRQ" secondAttribute="centerX" type="default" id="F9J-pM-C3B"/>
+                            <constraint firstItem="Avk-ux-P1o" firstAttribute="leading" secondItem="hS2-Aj-VRQ" secondAttribute="leading" constant="136" id="Jlm-Gw-Ymd"/>
                             <constraint firstItem="OvP-y1-aYh" firstAttribute="top" secondItem="hS2-Aj-VRQ" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Lzc-Ug-uOe"/>
-                            <constraint firstItem="geL-eb-dJd" firstAttribute="trailing" secondItem="hS2-Aj-VRQ" secondAttribute="trailing" type="default" id="QCf-W8-afV"/>
                             <constraint firstItem="2ho-Um-Vhe" firstAttribute="leading" secondItem="hS2-Aj-VRQ" secondAttribute="leading" type="default" id="WhQ-w2-QhI"/>
-                            <constraint firstItem="geL-eb-dJd" firstAttribute="bottom" secondItem="hS2-Aj-VRQ" secondAttribute="bottom" type="default" id="cZY-M9-ajd"/>
+                            <constraint firstItem="Avk-ux-P1o" firstAttribute="centerY" secondItem="geL-eb-dJd" secondAttribute="centerY" type="default" id="XLR-h9-9PN"/>
+                            <constraint firstItem="Avk-ux-P1o" firstAttribute="centerY" secondItem="hS2-Aj-VRQ" secondAttribute="centerY" type="default" id="dup-do-xh6"/>
+                            <constraint firstItem="Avk-ux-P1o" firstAttribute="centerY" secondItem="2ho-Um-Vhe" secondAttribute="centerY" type="default" id="l76-sd-kar"/>
                             <constraint firstItem="geL-eb-dJd" firstAttribute="top" secondItem="hS2-Aj-VRQ" secondAttribute="top" type="default" id="nFN-Lm-Og5"/>
                             <constraint firstItem="geL-eb-dJd" firstAttribute="leading" secondItem="hS2-Aj-VRQ" secondAttribute="leading" type="default" id="owQ-Lk-AtT"/>
                             <constraint firstItem="OvP-y1-aYh" firstAttribute="leading" secondItem="hS2-Aj-VRQ" secondAttribute="leading" constant="284" id="qhi-8Q-dhz"/>
-                            <constraint firstItem="2ho-Um-Vhe" firstAttribute="bottom" secondItem="hS2-Aj-VRQ" secondAttribute="bottom" type="default" id="u7C-gt-GJK"/>
                             <constraint firstAttribute="bottom" secondItem="OvP-y1-aYh" secondAttribute="bottom" constant="444" id="v0M-8q-FqR"/>
+                            <constraint firstItem="Avk-ux-P1o" firstAttribute="centerX" secondItem="geL-eb-dJd" secondAttribute="centerX" type="default" id="xE5-lH-PUQ"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="RE8-bs-bvW" appends="YES" id="1aZ-dj-rfv"/>
@@ -132,7 +139,9 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="doubleTap" destination="RE8-bs-bvW" id="VNJ-l0-tCj"/>
+                        <outlet property="map" destination="2ho-Um-Vhe" id="GVm-2x-dFA"/>
                         <outlet property="recordDot" destination="OvP-y1-aYh" id="5mA-ca-Qwb"/>
+                        <outlet property="splash" destination="Avk-ux-P1o" id="C47-Pd-aX5"/>
                         <outlet property="swipeUp" destination="T0L-8q-bgr" id="7E6-qr-98Q"/>
                         <outlet property="trippleTap" destination="pUU-Gz-PEO" id="Jyj-mb-1c7"/>
                         <outlet property="upperView" destination="geL-eb-dJd" id="21r-Kk-M4y"/>
@@ -159,6 +168,12 @@
         </scene>
     </scenes>
     <classes>
+        <class className="ListViewController" superclassName="RoundedViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
         <class className="MapCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapCell.h"/>
             <relationships>
@@ -175,7 +190,9 @@
                 <relationship kind="action" name="doubleTap:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="action" name="trippleTap:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="doubleTap" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="recordDot" candidateClass="UIView"/>
+                <relationship kind="outlet" name="splash" candidateClass="UIView"/>
                 <relationship kind="outlet" name="swipeUp" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="trippleTap" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="upperView" candidateClass="UIView"/>
@@ -195,12 +212,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="ViewController" superclassName="RoundedViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

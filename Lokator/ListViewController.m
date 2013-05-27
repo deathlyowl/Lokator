@@ -6,17 +6,21 @@
 //  Copyright (c) 2013 Paweł Ksieniewicz. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ListViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+Hex.h"
 #import "MapCell.h"
 
-@implementation ViewController
+@implementation ListViewController
 
 - (void)viewDidLoad
 {
     [self customLoadings];
     [super viewDidLoad];
+    
+    [self.view.layer setBorderColor:[UIColor colorWithWhite:.5 alpha:.5].CGColor];
+    [self.view.layer setBorderWidth:5];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -69,7 +73,16 @@
     // Create your mask layer
     CALayer* maskLayer = [CALayer layer];
     maskLayer.frame = CGRectMake(0,0,48 ,48);
-    maskLayer.contents = (__bridge id)[[UIImage imageNamed:@"marker.png"] CGImage];
+    
+    switch (rand()%2) {
+        case 0:
+            maskLayer.contents = (__bridge id)[[UIImage imageNamed:@"marker.png"] CGImage];
+            break;
+        default:
+            maskLayer.contents = (__bridge id)[[UIImage imageNamed:@"mapMarker.png"] CGImage];
+            break;
+    }
+    
     
     // Apply the mask to your uiview layer
     cell.icon.layer.mask = maskLayer;
