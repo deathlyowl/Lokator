@@ -31,4 +31,26 @@
     return flash;
 }
 
++ (CABasicAnimation *)blink{
+    CABasicAnimation *blink = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    blink.fromValue = [NSNumber numberWithFloat:0.0];
+    blink.toValue = [NSNumber numberWithFloat:1.0];
+    blink.duration = .5;        // 1 second
+    blink.autoreverses = YES;    // Back
+    blink.repeatCount = 999999;
+    
+    return blink;
+}
+
++ (CABasicAnimation *)borderBlink{
+    CABasicAnimation *borderBlink = [CABasicAnimation animationWithKeyPath:@"borderColor"];
+    borderBlink.fromValue = (__bridge id)([UIColor clearColor].CGColor);
+    borderBlink.toValue = (__bridge id)([UIColor colorWithCSS:@"#EE0000"].CGColor);
+    borderBlink.duration = .5;        // 1 second
+    borderBlink.autoreverses = YES;    // Back
+    borderBlink.repeatCount = 999999;
+    
+    return borderBlink;
+}
+
 @end

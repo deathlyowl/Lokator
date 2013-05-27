@@ -102,7 +102,7 @@
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvP-y1-aYh" userLabel="Record Dot">
                                 <color key="backgroundColor" red="0.66666668650000005" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avk-ux-P1o">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avk-ux-P1o">
                                 <color key="backgroundColor" red="0.66666668650000005" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geL-eb-dJd">
@@ -170,9 +170,6 @@
     <classes>
         <class className="ListViewController" superclassName="RoundedViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ListViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
-            </relationships>
         </class>
         <class className="MapCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapCell.h"/>

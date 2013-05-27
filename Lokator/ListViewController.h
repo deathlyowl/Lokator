@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
 #import "RoundedViewController.h"
 
-@interface ListViewController : RoundedViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
-    IBOutlet UIButton *recordButton;
-}
+@interface ListViewController : RoundedViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end

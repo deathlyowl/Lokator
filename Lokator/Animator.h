@@ -13,5 +13,7 @@
 
 + (CABasicAnimation *) disappear;
 + (CABasicAnimation *) flash;
++ (CABasicAnimation *) blink;
++ (CABasicAnimation *) borderBlink;
 
 @end

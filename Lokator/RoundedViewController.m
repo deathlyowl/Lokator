@@ -13,13 +13,9 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    
-    self.view.layer.cornerRadius = 32;
-    self.view.clipsToBounds = YES;
+    [self.view setCornerRadius:32];
 }
 
-- (IBAction)dismiss:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+- (IBAction)dismiss:(id)sender { [self dismissViewControllerAnimated:YES completion:nil]; }
 
 @end

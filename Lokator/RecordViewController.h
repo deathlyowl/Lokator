@@ -11,11 +11,9 @@
 #import "RoundedViewController.h"
 
 @interface RecordViewController : RoundedViewController {
-    IBOutlet UIView *recordDot;
-    IBOutlet UIView *upperView;
+    IBOutlet UIView *recordDot, *upperView, *splash;
     IBOutlet UITapGestureRecognizer *doubleTap, *trippleTap;
     IBOutlet UISwipeGestureRecognizer *swipeUp;
-    IBOutlet UIView *splash;
     IBOutlet MKMapView *map;
     BOOL recording;
 }
