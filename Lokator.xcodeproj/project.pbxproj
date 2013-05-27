@@ -20,6 +20,7 @@
 		FAD3E9BB1753A91500618FFD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD3E9BA1753A91500618FFD /* ViewController.m */; };
 		FAD3E9C21753A9CE00618FFD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E9C11753A9CE00618FFD /* CoreLocation.framework */; };
 		FAD3E9C41753AA2200618FFD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E9C31753AA2200618FFD /* QuartzCore.framework */; };
+		FAD3E9C71753AB6A00618FFD /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD3E9C61753AB6A00618FFD /* UIColor+Hex.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		FAD3E9BA1753A91500618FFD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FAD3E9C11753A9CE00618FFD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FAD3E9C31753AA2200618FFD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FAD3E9C51753AB6A00618FFD /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		FAD3E9C61753AB6A00618FFD /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				FAD3E9AD1753A91400618FFD /* AppDelegate.h */,
 				FAD3E9AE1753A91400618FFD /* AppDelegate.m */,
 				FAD3E9B61753A91500618FFD /* MainStoryboard.storyboard */,
+				FAD3E9C51753AB6A00618FFD /* UIColor+Hex.h */,
+				FAD3E9C61753AB6A00618FFD /* UIColor+Hex.m */,
 				FAD3E9B91753A91500618FFD /* ViewController.h */,
 				FAD3E9BA1753A91500618FFD /* ViewController.m */,
 				FAD3E9A51753A91400618FFD /* Supporting Files */,
@@ -184,6 +189,7 @@
 				FAD3E9AB1753A91400618FFD /* main.m in Sources */,
 				FAD3E9AF1753A91400618FFD /* AppDelegate.m in Sources */,
 				FAD3E9BB1753A91500618FFD /* ViewController.m in Sources */,
+				FAD3E9C71753AB6A00618FFD /* UIColor+Hex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

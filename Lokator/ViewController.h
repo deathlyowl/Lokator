@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
+    IBOutlet UIButton *recordButton;
+}
+- (IBAction)record:(id)sender;
 
 @end
