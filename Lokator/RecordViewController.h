@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "RoundedViewController.h"
 
-@interface RecordViewController : RoundedViewController {
+@interface RecordViewController : RoundedViewController <CLLocationManagerDelegate> {
+    CLLocationManager *locationManager;
+    
     IBOutlet UIView *recordDot, *upperView, *splash;
     IBOutlet UITapGestureRecognizer *doubleTap, *trippleTap;
     IBOutlet UISwipeGestureRecognizer *swipeUp;

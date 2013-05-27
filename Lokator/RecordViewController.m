@@ -14,6 +14,9 @@
 @implementation RecordViewController
 
 - (void)viewDidLoad{
+    
+    [super viewDidLoad];
+    
     recording = NO;
     
     [self.view setBorderWidth:5
@@ -27,7 +30,28 @@
     
     [doubleTap requireGestureRecognizerToFail:trippleTap];
     
-    [super viewDidLoad];
+    // Initialize location manager
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [locationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    //NSLog(@"Location: %@", newLocation);
+    
+    if ([newLocation distanceFromLocation:oldLocation]) {
+        
+        MKMapPoint mapPoint = MKMapPointForCoordinate(newLocation.coordinate);
+        
+        [map setVisibleMapRect:MKMapRectMake(mapPoint.x-5000, mapPoint.y-5000, 10000, 10000)
+                      animated:YES];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated{
