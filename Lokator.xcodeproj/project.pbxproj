@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA381DAF1753B3F300BA9C9E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA381DAE1753B3F300BA9C9E /* MapKit.framework */; };
 		FAD3E99F1753A91400618FFD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E99E1753A91400618FFD /* UIKit.framework */; };
 		FAD3E9A11753A91400618FFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E9A01753A91400618FFD /* Foundation.framework */; };
 		FAD3E9A31753A91400618FFD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E9A21753A91400618FFD /* CoreGraphics.framework */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA381DAE1753B3F300BA9C9E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FAD3E99B1753A91400618FFD /* Lokator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lokator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD3E99E1753A91400618FFD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAD3E9A01753A91400618FFD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA381DAF1753B3F300BA9C9E /* MapKit.framework in Frameworks */,
 				FAD3E9C41753AA2200618FFD /* QuartzCore.framework in Frameworks */,
 				FAD3E9C21753A9CE00618FFD /* CoreLocation.framework in Frameworks */,
 				FAD3E99F1753A91400618FFD /* UIKit.framework in Frameworks */,
@@ -82,6 +85,7 @@
 		FAD3E99D1753A91400618FFD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA381DAE1753B3F300BA9C9E /* MapKit.framework */,
 				FAD3E9C31753AA2200618FFD /* QuartzCore.framework */,
 				FAD3E9C11753A9CE00618FFD /* CoreLocation.framework */,
 				FAD3E99E1753A91400618FFD /* UIKit.framework */,
@@ -312,6 +316,7 @@
 				FAD3E9C01753A91500618FFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
