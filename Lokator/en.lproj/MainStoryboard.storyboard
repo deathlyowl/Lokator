@@ -16,17 +16,17 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="64" maxX="0.0" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="XoQ-53-2hn">
-                                    <size key="itemSize" width="160" height="64"/>
+                                    <size key="itemSize" width="160" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Label" id="qyz-CN-2hU" customClass="MapCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="v0y-3V-FCb"/>
@@ -41,18 +41,18 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Qgg-VW-9FT" firstAttribute="top" secondItem="qyz-CN-2hU" secondAttribute="top" constant="8" id="38X-ZT-kZV"/>
-                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="top" secondItem="qyz-CN-2hU" secondAttribute="top" type="default" id="5Jd-BW-ASY"/>
-                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="centerX" secondItem="Qgg-VW-9FT" secondAttribute="centerX" type="default" id="6Ii-5e-yMU"/>
-                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="trailing" secondItem="qyz-CN-2hU" secondAttribute="trailing" type="default" id="JGy-vJ-rSV"/>
-                                            <constraint firstItem="WO7-zk-v12" firstAttribute="top" secondItem="qyz-CN-2hU" secondAttribute="top" type="default" id="K5e-Gr-wfh"/>
-                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="centerY" secondItem="Qgg-VW-9FT" secondAttribute="centerY" type="default" id="cZe-bo-VB3"/>
-                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="leading" secondItem="qyz-CN-2hU" secondAttribute="leading" type="default" id="eud-Em-pEY"/>
-                                            <constraint firstItem="WO7-zk-v12" firstAttribute="trailing" secondItem="qyz-CN-2hU" secondAttribute="trailing" type="default" id="f8p-Qo-KFu"/>
+                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="bottom" secondItem="qyz-CN-2hU" secondAttribute="bottom" type="default" id="OR8-BG-IXT"/>
+                                            <constraint firstItem="WO7-zk-v12" firstAttribute="leading" secondItem="qyz-CN-2hU" secondAttribute="leading" type="default" id="RIC-xz-2uV"/>
+                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="top" secondItem="qyz-CN-2hU" secondAttribute="top" type="default" id="W3u-Sw-GMC"/>
+                                            <constraint firstItem="WO7-zk-v12" firstAttribute="centerY" secondItem="Qgg-VW-9FT" secondAttribute="centerY" type="default" id="YMH-cO-agm"/>
+                                            <constraint firstItem="WO7-zk-v12" firstAttribute="trailing" secondItem="qyz-CN-2hU" secondAttribute="trailing" type="default" id="gWo-VF-w5a"/>
+                                            <constraint firstItem="Qgg-VW-9FT" firstAttribute="top" secondItem="qyz-CN-2hU" secondAttribute="top" constant="16" id="hXW-1q-icO"/>
+                                            <constraint firstItem="WO7-zk-v12" firstAttribute="top" secondItem="qyz-CN-2hU" secondAttribute="top" type="default" id="ldE-7D-ALF"/>
                                             <constraint firstItem="Qgg-VW-9FT" firstAttribute="leading" secondItem="qyz-CN-2hU" secondAttribute="leading" constant="56" id="ms4-CG-8Pn"/>
-                                            <constraint firstItem="WO7-zk-v12" firstAttribute="bottom" secondItem="qyz-CN-2hU" secondAttribute="bottom" type="default" id="nyY-3c-KJD"/>
-                                            <constraint firstItem="WO7-zk-v12" firstAttribute="leading" secondItem="qyz-CN-2hU" secondAttribute="leading" type="default" id="yKe-rW-Dh7"/>
-                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="bottom" secondItem="qyz-CN-2hU" secondAttribute="bottom" type="default" id="yno-OU-wdt"/>
+                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="trailing" secondItem="qyz-CN-2hU" secondAttribute="trailing" type="default" id="nVU-n5-urs"/>
+                                            <constraint firstItem="Qgg-VW-9FT" firstAttribute="centerX" secondItem="WO7-zk-v12" secondAttribute="centerX" type="default" id="ou0-Oe-Mbb"/>
+                                            <constraint firstItem="WO7-zk-v12" firstAttribute="bottom" secondItem="qyz-CN-2hU" secondAttribute="bottom" type="default" id="qJT-yj-lGh"/>
+                                            <constraint firstItem="v0y-3V-FCb" firstAttribute="leading" secondItem="qyz-CN-2hU" secondAttribute="leading" type="default" id="r2L-AO-gDD"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="icon" destination="Qgg-VW-9FT" id="J3l-wy-7QT"/>
@@ -172,7 +172,6 @@
         <class className="RecordViewController" superclassName="RoundedViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RecordViewController.h"/>
             <relationships>
-                <relationship kind="action" name="dismiss:"/>
                 <relationship kind="action" name="doubleTap:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="action" name="trippleTap:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="doubleTap" candidateClass="UITapGestureRecognizer"/>

@@ -13,6 +13,7 @@
 		FA381DB51753B54000BA9C9E /* MapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA381DB41753B54000BA9C9E /* MapCell.m */; };
 		FA381DB71753BA8600BA9C9E /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = FA381DB61753BA8600BA9C9E /* marker.png */; };
 		FA381DB91753C16A00BA9C9E /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = FA381DB81753C16A00BA9C9E /* map.png */; };
+		FA6194201753E0C400529E6F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FA61941F1753E0C400529E6F /* Icon.png */; };
 		FAD3E99F1753A91400618FFD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E99E1753A91400618FFD /* UIKit.framework */; };
 		FAD3E9A11753A91400618FFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E9A01753A91400618FFD /* Foundation.framework */; };
 		FAD3E9A31753A91400618FFD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E9A21753A91400618FFD /* CoreGraphics.framework */; };
@@ -39,6 +40,7 @@
 		FA381DB41753B54000BA9C9E /* MapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapCell.m; path = ../MapCell.m; sourceTree = "<group>"; };
 		FA381DB61753BA8600BA9C9E /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
 		FA381DB81753C16A00BA9C9E /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		FA61941F1753E0C400529E6F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		FAD3E99B1753A91400618FFD /* Lokator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lokator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD3E99E1753A91400618FFD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAD3E9A01753A91400618FFD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -132,6 +134,7 @@
 		FAD3E9A51753A91400618FFD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA61941F1753E0C400529E6F /* Icon.png */,
 				FAD3E9A61753A91400618FFD /* Lokator-Info.plist */,
 				FAD3E9A71753A91400618FFD /* InfoPlist.strings */,
 				FAD3E9AA1753A91400618FFD /* main.m */,
@@ -203,6 +206,7 @@
 				FAD3E9B81753A91500618FFD /* MainStoryboard.storyboard in Resources */,
 				FA381DB71753BA8600BA9C9E /* marker.png in Resources */,
 				FA381DB91753C16A00BA9C9E /* map.png in Resources */,
+				FA6194201753E0C400529E6F /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
