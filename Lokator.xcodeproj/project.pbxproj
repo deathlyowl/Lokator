@@ -149,11 +149,11 @@
 		FAD3E99D1753A91400618FFD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FA011B4F1754B92100AA30FC /* GPX.framework */,
 				FA61942A1753FC4E00529E6F /* UIView+MagicViews.h */,
 				FA61942B1753FC4E00529E6F /* UIView+MagicViews.m */,
 				FAD3E9C51753AB6A00618FFD /* UIColor+Hex.h */,
 				FAD3E9C61753AB6A00618FFD /* UIColor+Hex.m */,
+				FA011B4F1754B92100AA30FC /* GPX.framework */,
 				FA381DAE1753B3F300BA9C9E /* MapKit.framework */,
 				FAD3E9C31753AA2200618FFD /* QuartzCore.framework */,
 				FAD3E9C11753A9CE00618FFD /* CoreLocation.framework */,
