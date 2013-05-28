@@ -9,6 +9,7 @@
 #import "ListViewController.h"
 #import "MapCell.h"
 #import "Animator.h"
+#import <GPX/GPX.h>
 
 @implementation ListViewController
 
@@ -62,16 +63,27 @@
     if (!isDrawerOpen) {
         selectedItem = [[[Library sharedLibrary] elements] objectAtIndex:[Library.sharedLibrary.elements count] - indexPath.row - 1];
 
+        GPXRoot *root = [GPXRoot rootWithCreator:@"Lokator"];
+
         CLLocation *location;
         if ([selectedItem isKindOfClass:[CLLocation class]]) {
             [self.drawerIcon setMaskFromImage:[UIImage imageNamed:@"marker.png"]];
             location = selectedItem;
+            
+            GPXWaypoint *waypoint = [root newWaypointWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude];
+            waypoint.time = location.timestamp;
         }
         else {
             [self.drawerIcon setMaskFromImage:[UIImage imageNamed:@"mapMarker.png"]];
             location = [selectedItem lastObject];
-            
+                        
+            for (CLLocation *location in selectedItem) {
+                GPXWaypoint *waypoint = [root newWaypointWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude];
+                waypoint.time = location.timestamp;
+            }
         }
+        
+        gpx = root.gpx;
 
         [drawerMap setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%.0f_big.png", [Library applicationDocumentsDirectory], location.timestamp.timeIntervalSince1970]]];
 
@@ -109,5 +121,14 @@
     
     [collectionView reloadData];
     [self hideDrawer:sender];
+}
+
+- (IBAction)share:(id)sender {
+    NSLog(@"GPX: %@", gpx);
+    
+    [gpx writeToFile:[NSString stringWithFormat:@"%@/data.gpx", [Library applicationDocumentsDirectory]]
+          atomically:YES
+            encoding:NSUTF8StringEncoding
+               error:nil];
 }
 @end

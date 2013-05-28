@@ -44,9 +44,7 @@
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
-{
-    //NSLog(@"Location: %@", newLocation);
-    
+{    
     if ([newLocation distanceFromLocation:oldLocation]) {
         currentLocation = newLocation;
         [self relocate];
@@ -170,7 +168,6 @@ int zoomWithScale(int scale) {
     else{
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
         // Stop recording
-        [map removeOverlays:map.overlays];
 
         recording = NO;
         [recordDot.layer removeAllAnimations];
@@ -195,6 +192,9 @@ int zoomWithScale(int scale) {
         [largeMapData writeToFile:[NSString stringWithFormat:@"%@/%.0f_big.png", [Library applicationDocumentsDirectory], locationToSave.timestamp.timeIntervalSince1970] atomically:YES];
         
         CGImageRelease(imageRef);
+        
+        
+        [map removeOverlays:map.overlays];
         
         [[[Library sharedLibrary] elements] addObject:record];
         

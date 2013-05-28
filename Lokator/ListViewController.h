@@ -14,11 +14,13 @@
     id selectedItem;
     __weak IBOutlet UIImageView *drawerMap;
     IBOutlet UICollectionView *collectionView;
+    NSString *gpx;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *drawerView;
 @property (weak, nonatomic) IBOutlet UIView *drawerIcon;
 - (IBAction)hideDrawer:(id)sender;
 - (IBAction)destroy:(id)sender;
+- (IBAction)share:(id)sender;
 
 @end

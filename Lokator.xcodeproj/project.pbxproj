@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA011B501754B92100AA30FC /* GPX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA011B4F1754B92100AA30FC /* GPX.framework */; };
 		FA12F5AF1753C3DE000BB462 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA12F5AE1753C3DE000BB462 /* RecordViewController.m */; };
 		FA12F5B21753C44A000BB462 /* RoundedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA12F5B11753C44A000BB462 /* RoundedViewController.m */; };
 		FA189F9A17540C9100B0D455 /* Library.m in Sources */ = {isa = PBXBuildFile; fileRef = FA189F9917540C9100B0D455 /* Library.m */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA011B4F1754B92100AA30FC /* GPX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPX.framework; sourceTree = "<group>"; };
 		FA12F5AD1753C3DE000BB462 /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
 		FA12F5AE1753C3DE000BB462 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		FA12F5B01753C44A000BB462 /* RoundedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedViewController.h; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				FAD3E99F1753A91400618FFD /* UIKit.framework in Frameworks */,
 				FAD3E9A11753A91400618FFD /* Foundation.framework in Frameworks */,
 				FAD3E9A31753A91400618FFD /* CoreGraphics.framework in Frameworks */,
+				FA011B501754B92100AA30FC /* GPX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +149,7 @@
 		FAD3E99D1753A91400618FFD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA011B4F1754B92100AA30FC /* GPX.framework */,
 				FA61942A1753FC4E00529E6F /* UIView+MagicViews.h */,
 				FA61942B1753FC4E00529E6F /* UIView+MagicViews.m */,
 				FAD3E9C51753AB6A00618FFD /* UIColor+Hex.h */,
@@ -366,6 +370,10 @@
 		FAD3E9BF1753A91500618FFD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lokator/Lokator-Prefix.pch";
 				INFOPLIST_FILE = "Lokator/Lokator-Info.plist";
@@ -377,6 +385,10 @@
 		FAD3E9C01753A91500618FFD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Lokator/Lokator-Prefix.pch";
 				INFOPLIST_FILE = "Lokator/Lokator-Info.plist";
