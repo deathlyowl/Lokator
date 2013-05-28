@@ -1,6 +1,8 @@
 Lokator
 =======
 
+![Icon](Icon.png)
+
 Lokator is a simple iOS GeoLogger. 
 
 ##Usage
