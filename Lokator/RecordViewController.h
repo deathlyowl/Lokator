@@ -21,6 +21,8 @@
     IBOutlet UISwipeGestureRecognizer *swipeUp;
     IBOutlet MKMapView *map;
     
+    NSMutableArray *record;
+    
     
     BOOL recording;
 }

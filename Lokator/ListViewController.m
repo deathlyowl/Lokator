@@ -40,12 +40,21 @@
     MapCell *cell = [_collectionView dequeueReusableCellWithReuseIdentifier:@"Label"
                                                                            forIndexPath:indexPath];
     
-    CLLocation *location = [[[Library sharedLibrary] elements] objectAtIndex:[Library.sharedLibrary.elements count] - indexPath.row - 1];
+    id item = [[[Library sharedLibrary] elements] objectAtIndex:[Library.sharedLibrary.elements count] - indexPath.row - 1];
+    
+    CLLocation *location;
+    if ([item isKindOfClass:[CLLocation class]]) {
+        location = item;
+        [cell.icon setMaskFromImage:[UIImage imageNamed:@"marker.png"]];
+    }
+    else {
+        location = [item lastObject];
+        [cell.icon setMaskFromImage:[UIImage imageNamed:@"mapMarker.png"]];
+    }
     
     [cell.image setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%.0f.png", [Library applicationDocumentsDirectory], location.timestamp.timeIntervalSince1970]]];
     [cell.icon setCornerRadius:24];
-    [cell.icon setMaskFromImage:[UIImage imageNamed:@"marker.png"]];
-    
+        
     return cell;
 }
 
@@ -53,14 +62,19 @@
     if (!isDrawerOpen) {
         selectedItem = [[[Library sharedLibrary] elements] objectAtIndex:[Library.sharedLibrary.elements count] - indexPath.row - 1];
 
+        CLLocation *location;
         if ([selectedItem isKindOfClass:[CLLocation class]]) {
             [self.drawerIcon setMaskFromImage:[UIImage imageNamed:@"marker.png"]];
-            CLLocation *location = selectedItem;
-            [drawerMap setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%.0f_big.png", [Library applicationDocumentsDirectory], location.timestamp.timeIntervalSince1970]]];
-
+            location = selectedItem;
+        }
+        else {
+            [self.drawerIcon setMaskFromImage:[UIImage imageNamed:@"mapMarker.png"]];
+            location = [selectedItem lastObject];
+            
         }
 
-        
+        [drawerMap setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%.0f_big.png", [Library applicationDocumentsDirectory], location.timestamp.timeIntervalSince1970]]];
+
         isDrawerOpen = YES;
         
         [self.drawerView.layer addAnimation:[Animator drawerAppear] forKey:@"drawerAppearAnimation"];
@@ -83,17 +97,16 @@
     [[[Library sharedLibrary] elements] removeObject:selectedItem];
     [[Library sharedLibrary] save];
     
-    if ([selectedItem isKindOfClass:[CLLocation class]]) {
-        [self.drawerIcon setMaskFromImage:[UIImage imageNamed:@"marker.png"]];
-        CLLocation *location = selectedItem;
-        
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/%.0f_big.png", [Library applicationDocumentsDirectory], location.timestamp.timeIntervalSince1970] error:nil];
-        [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/%.0f.png", [Library applicationDocumentsDirectory], location.timestamp.timeIntervalSince1970] error:nil];
-    }
-
+    CLLocation *location;
     
-     
+    if ([selectedItem isKindOfClass:[CLLocation class]]) location = selectedItem;
+    else location = [selectedItem lastObject];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/%.0f_big.png", [Library applicationDocumentsDirectory], location.timestamp.timeIntervalSince1970] error:nil];
+    [fileManager removeItemAtPath:[NSString stringWithFormat:@"%@/%.0f.png", [Library applicationDocumentsDirectory], location.timestamp.timeIntervalSince1970] error:nil];
+    
+    
     [collectionView reloadData];
     [self hideDrawer:sender];
 }

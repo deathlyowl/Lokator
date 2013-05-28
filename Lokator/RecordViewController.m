@@ -52,9 +52,13 @@
         MKMapPoint mapPoint = MKMapPointForCoordinate(newLocation.coordinate);
         float zoom = 10000;
         
-        
         [map setVisibleMapRect:MKMapRectMake(mapPoint.x-zoom/2, mapPoint.y-zoom/2, zoom, zoom)
                       animated:YES];
+        
+        if (recording) {
+            [record addObject:newLocation];
+            NSLog(@"Recorded items: %i", record.count);
+        }
     }
 }
 
@@ -99,11 +103,12 @@
 
 - (IBAction)trippleTap:(UITapGestureRecognizer *)sender {
     if (!recording) {
+        record = [[NSMutableArray alloc] init];
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
         // Start recording
-        recording = YES;
         [recordDot.layer addAnimation:[Animator blink] forKey:@"blinkAnimation"];
         [self.view.layer addAnimation:[Animator borderBlink] forKey:@"borderBlinkAnimation"];
+        recording = YES;
     }
     else{
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
@@ -111,6 +116,31 @@
         recording = NO;
         [recordDot.layer removeAllAnimations];
         [self.view.layer removeAllAnimations];
+        
+        NSLog(@"Saving record with %i items.", record.count);
+        
+        UIGraphicsBeginImageContext(map.frame.size);
+        
+        [map.layer renderInContext:UIGraphicsGetCurrentContext()];
+        UIImage *mapImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        CGImageRef imageRef = CGImageCreateWithImageInRect([mapImage CGImage], CGRectMake(160-80, 240-40, 160, 80));
+        CGImageRef largeImageRef = CGImageCreateWithImageInRect([mapImage CGImage], CGRectMake(160-150, 240-130, 300, 260));
+        
+        CLLocation *locationToSave = [record lastObject];
+        
+        NSData *mapData = UIImagePNGRepresentation([UIImage imageWithCGImage:imageRef]);
+        NSData *largeMapData = UIImagePNGRepresentation([UIImage imageWithCGImage:largeImageRef]);
+        [mapData writeToFile:[NSString stringWithFormat:@"%@/%.0f.png", [Library applicationDocumentsDirectory], locationToSave.timestamp.timeIntervalSince1970] atomically:YES];
+        [largeMapData writeToFile:[NSString stringWithFormat:@"%@/%.0f_big.png", [Library applicationDocumentsDirectory], locationToSave.timestamp.timeIntervalSince1970] atomically:YES];
+        
+        CGImageRelease(imageRef);
+        
+        [[[Library sharedLibrary] elements] addObject:record];
+        
+        [[Library sharedLibrary] save];
+        
     }
     swipeUp.enabled = doubleTap.enabled = !recording;
 }
