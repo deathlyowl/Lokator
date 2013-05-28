@@ -14,6 +14,7 @@
 @implementation RecordViewController
 
 - (void)viewDidLoad{
+    scale = 2;
     
     [super viewDidLoad];
     
@@ -48,18 +49,74 @@
     
     if ([newLocation distanceFromLocation:oldLocation]) {
         currentLocation = newLocation;
-        
-        MKMapPoint mapPoint = MKMapPointForCoordinate(newLocation.coordinate);
-        float zoom = 10000;
-        
-        [map setVisibleMapRect:MKMapRectMake(mapPoint.x-zoom/2, mapPoint.y-zoom/2, zoom, zoom)
-                      animated:YES];
-        
+        [self relocate];
         if (recording) {
             [record addObject:newLocation];
-            NSLog(@"Recorded items: %i", record.count);
+            [self drawRoute];
         }
     }
+}
+
+
+- (IBAction)zoomIn:(id)sender {
+    scale++;
+    if (scale > 6) scale = 6;
+    [self relocate];
+}
+
+- (IBAction)zoomOut:(id)sender {
+    scale--;
+    if (scale < 0) scale = 0;
+    [self relocate];
+}
+
+- (void) relocate{
+    MKMapPoint mapPoint = MKMapPointForCoordinate(currentLocation.coordinate);
+    
+    [map setVisibleMapRect:MKMapRectMake(mapPoint.x-zoomWithScale(scale)/2, mapPoint.y-zoomWithScale(scale)/2, zoomWithScale(scale), zoomWithScale(scale))
+                  animated:YES];
+}
+
+int zoomWithScale(int scale) {
+    switch (scale) {
+        case 0: return 2500;
+        case 1: return 5000;
+        case 2: return 10000;
+        case 3: return 20000;
+        case 4: return 40000;
+        case 5: return 80000;
+        case 6: return 85000;
+    }
+    return 10000;
+}
+
+- (void) drawRoute
+{
+    NSArray *overlaysBefore = [map.overlays copy];
+    
+    
+    NSInteger numberOfSteps = record.count;
+    
+    CLLocationCoordinate2D coordinates[numberOfSteps];
+    for (NSInteger index = 0; index < numberOfSteps; index++) {
+        CLLocation *location = [record objectAtIndex:index];
+        CLLocationCoordinate2D coordinate = location.coordinate;
+        
+        coordinates[index] = coordinate;
+    }
+    
+    MKPolyline *polyLine = [MKPolyline polylineWithCoordinates:coordinates count:numberOfSteps];
+    [map addOverlay:polyLine];
+    [map removeOverlays:overlaysBefore];
+    
+}
+
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
+    MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:overlay];
+    polylineView.strokeColor = [UIColor colorWithCSS:@"#EE0000"];
+    polylineView.lineWidth = 3.0;
+    
+    return polylineView;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -113,6 +170,8 @@
     else{
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
         // Stop recording
+        [map removeOverlays:map.overlays];
+
         recording = NO;
         [recordDot.layer removeAllAnimations];
         [self.view.layer removeAllAnimations];
@@ -144,4 +203,5 @@
     }
     swipeUp.enabled = doubleTap.enabled = !recording;
 }
+
 @end

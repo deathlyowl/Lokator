@@ -23,11 +23,13 @@
     
     NSMutableArray *record;
     
-    
+    int scale;
     BOOL recording;
 }
 
 - (IBAction)doubleTap:(UITapGestureRecognizer *)sender;
 - (IBAction)trippleTap:(UITapGestureRecognizer *)sender;
+- (IBAction)zoomIn:(id)sender;
+- (IBAction)zoomOut:(id)sender;
 
 @end
