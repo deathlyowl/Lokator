@@ -35,7 +35,7 @@
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
     
     [locationManager startUpdatingLocation];
 }
@@ -69,18 +69,28 @@
 }
 
 - (IBAction)doubleTap:(UITapGestureRecognizer *)sender {
+    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    
     [upperView.layer addAnimation:[Animator flash] forKey:@"flashAnimation"];
     NSLog(@"Snap on: %@", currentLocation);
     
     UIGraphicsBeginImageContext(map.frame.size);
+    
     [map.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *mapImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
+    CGImageRef imageRef = CGImageCreateWithImageInRect([mapImage CGImage], CGRectMake(160-80, 240-40, 160, 80));
+    CGImageRef largeImageRef = CGImageCreateWithImageInRect([mapImage CGImage], CGRectMake(160-150, 240-130, 300, 260));
+    
     CLLocation *locationToSave = currentLocation;
     
-    NSData *mapData = UIImagePNGRepresentation(mapImage);
+    NSData *mapData = UIImagePNGRepresentation([UIImage imageWithCGImage:imageRef]);
+    NSData *largeMapData = UIImagePNGRepresentation([UIImage imageWithCGImage:largeImageRef]);
     [mapData writeToFile:[NSString stringWithFormat:@"%@/%.0f.png", [Library applicationDocumentsDirectory], locationToSave.timestamp.timeIntervalSince1970] atomically:YES];
+    [largeMapData writeToFile:[NSString stringWithFormat:@"%@/%.0f_big.png", [Library applicationDocumentsDirectory], locationToSave.timestamp.timeIntervalSince1970] atomically:YES];
+    
+    CGImageRelease(imageRef);
     
     [[[Library sharedLibrary] elements] addObject:locationToSave];
     
@@ -89,12 +99,14 @@
 
 - (IBAction)trippleTap:(UITapGestureRecognizer *)sender {
     if (!recording) {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
         // Start recording
         recording = YES;
         [recordDot.layer addAnimation:[Animator blink] forKey:@"blinkAnimation"];
         [self.view.layer addAnimation:[Animator borderBlink] forKey:@"borderBlinkAnimation"];
     }
     else{
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
         // Stop recording
         recording = NO;
         [recordDot.layer removeAllAnimations];

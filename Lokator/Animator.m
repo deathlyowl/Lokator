@@ -11,6 +11,28 @@
 @implementation Animator
 
 
++ (CABasicAnimation *)drawerDisappear{
+    CABasicAnimation *appear = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    appear.fromValue = [NSNumber numberWithFloat:1];
+    appear.toValue = [NSNumber numberWithFloat:0];
+    appear.duration = .5;        // 1 second
+    appear.autoreverses = NO;    // Back
+    appear.repeatCount = 1;
+    
+    return appear;
+}
+
++ (CABasicAnimation *)drawerAppear{
+    CABasicAnimation *appear = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    appear.fromValue = [NSNumber numberWithFloat:0];
+    appear.toValue = [NSNumber numberWithFloat:1];
+    appear.duration = .5;        // 1 second
+    appear.autoreverses = NO;    // Back
+    appear.repeatCount = 1;
+    
+    return appear;
+}
+
 + (CABasicAnimation *)appear{
     CABasicAnimation *appear = [CABasicAnimation animationWithKeyPath:@"opacity"];
     appear.fromValue = [NSNumber numberWithFloat:0];
