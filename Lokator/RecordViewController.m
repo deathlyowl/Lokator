@@ -19,6 +19,7 @@
     [super viewDidLoad];
     
     recording = NO;
+    firstLocation = YES;
     
     [self.view setBorderWidth:5
                      andColor:[UIColor clearColor]];
@@ -72,7 +73,8 @@
     MKMapPoint mapPoint = MKMapPointForCoordinate(currentLocation.coordinate);
     
     [map setVisibleMapRect:MKMapRectMake(mapPoint.x-zoomWithScale(scale)/2, mapPoint.y-zoomWithScale(scale)/2, zoomWithScale(scale), zoomWithScale(scale))
-                  animated:YES];
+                  animated:!firstLocation];
+    firstLocation = NO;
 }
 
 int zoomWithScale(int scale) {

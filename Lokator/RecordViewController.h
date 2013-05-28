@@ -25,6 +25,8 @@
     
     int scale;
     BOOL recording;
+    
+    BOOL firstLocation;
 }
 
 - (IBAction)doubleTap:(UITapGestureRecognizer *)sender;

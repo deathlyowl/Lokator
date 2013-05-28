@@ -17,7 +17,6 @@
 		FA381DB91753C16A00BA9C9E /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = FA381DB81753C16A00BA9C9E /* map.png */; };
 		FA6194201753E0C400529E6F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FA61941F1753E0C400529E6F /* Icon.png */; };
 		FA6194221753E47C00529E6F /* mapMarker.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6194211753E47B00529E6F /* mapMarker.png */; };
-		FA6194241753F61E00529E6F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6194231753F61E00529E6F /* Default.png */; };
 		FA6194271753F64100529E6F /* Animator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6194261753F64100529E6F /* Animator.m */; };
 		FA61942C1753FC4E00529E6F /* UIView+MagicViews.m in Sources */ = {isa = PBXBuildFile; fileRef = FA61942B1753FC4E00529E6F /* UIView+MagicViews.m */; };
 		FA61942E1754075500529E6F /* markerAlt.png in Resources */ = {isa = PBXBuildFile; fileRef = FA61942D1754075500529E6F /* markerAlt.png */; };
@@ -55,7 +54,6 @@
 		FA381DB81753C16A00BA9C9E /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		FA61941F1753E0C400529E6F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		FA6194211753E47B00529E6F /* mapMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapMarker.png; sourceTree = "<group>"; };
-		FA6194231753F61E00529E6F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		FA6194251753F64000529E6F /* Animator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animator.h; sourceTree = "<group>"; };
 		FA6194261753F64100529E6F /* Animator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animator.m; sourceTree = "<group>"; };
 		FA61942A1753FC4E00529E6F /* UIView+MagicViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+MagicViews.h"; path = "Lokator/UIView+MagicViews.h"; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 				FAB1BCCB17549D60005ED064 /* 21-skull.png */,
 				FAB1BCCC17549D60005ED064 /* 58-bookmark.png */,
 				FA61942D1754075500529E6F /* markerAlt.png */,
-				FA6194231753F61E00529E6F /* Default.png */,
 				FA61941F1753E0C400529E6F /* Icon.png */,
 				FAD3E9A61753A91400618FFD /* Lokator-Info.plist */,
 				FAD3E9A71753A91400618FFD /* InfoPlist.strings */,
@@ -261,7 +258,6 @@
 				FA381DB91753C16A00BA9C9E /* map.png in Resources */,
 				FA6194201753E0C400529E6F /* Icon.png in Resources */,
 				FA6194221753E47C00529E6F /* mapMarker.png in Resources */,
-				FA6194241753F61E00529E6F /* Default.png in Resources */,
 				FA61942E1754075500529E6F /* markerAlt.png in Resources */,
 				FAB1BCCD17549D60005ED064 /* 18-envelope.png in Resources */,
 				FAB1BCCE17549D60005ED064 /* 21-skull.png in Resources */,
