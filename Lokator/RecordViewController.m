@@ -56,7 +56,6 @@
     }
 }
 
-
 - (IBAction)zoomIn:(id)sender {
     scale++;
     if (scale > 6) scale = 6;
@@ -166,6 +165,7 @@ int zoomWithScale(int scale) {
         [recordDot.layer addAnimation:[Animator blink] forKey:@"blinkAnimation"];
         [self.view.layer addAnimation:[Animator borderBlink] forKey:@"borderBlinkAnimation"];
         recording = YES;
+        
     }
     else{
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
@@ -203,6 +203,8 @@ int zoomWithScale(int scale) {
         [[Library sharedLibrary] save];
         
     }
+    // Do not fall asleep when recording
+    [UIApplication sharedApplication].idleTimerDisabled = recording;
     swipeUp.enabled = doubleTap.enabled = !recording;
 }
 
