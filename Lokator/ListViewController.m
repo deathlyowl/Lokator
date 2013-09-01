@@ -124,11 +124,54 @@
 }
 
 - (IBAction)share:(id)sender {
-    NSLog(@"GPX: %@", gpx);
+    NSString *tsv = @"";
+    if (![selectedItem isKindOfClass:[CLLocation class]])
+        for (CLLocation *location in selectedItem)
+            tsv = [tsv stringByAppendingFormat:@"%f\t%f\t%i\n", location.coordinate.latitude, location.coordinate.longitude, (int)location.timestamp.timeIntervalSince1970];
     
-    [gpx writeToFile:[NSString stringWithFormat:@"%@/data.gpx", [Library applicationDocumentsDirectory]]
-          atomically:YES
-            encoding:NSUTF8StringEncoding
-               error:nil];
+    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
+        
+    [mailComposer addAttachmentData:[gpx dataUsingEncoding:NSUTF8StringEncoding]
+                           mimeType:@"application/gpx+xml"
+                           fileName:@"data.gpx"];
+    
+    [mailComposer addAttachmentData:[tsv dataUsingEncoding:NSUTF8StringEncoding]
+                           mimeType:@"text/tab-separated-values"
+                           fileName:@"data.tsv"];
+    
+    /* Set default subject */
+    [mailComposer setSubject:@"Dane GPX"];
+    
+    mailComposer.mailComposeDelegate = self;
+    
+    [self presentViewController:mailComposer
+                       animated:YES
+                     completion:nil];    
 }
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
+            break;
+        default:
+            NSLog(@"Mail not sent.");
+            break;
+    }
+    // Remove the mail view
+    [controller dismissViewControllerAnimated:YES
+                                   completion:nil];
+}
+
 @end

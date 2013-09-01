@@ -23,6 +23,7 @@
 		FAB1BCCD17549D60005ED064 /* 18-envelope.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB1BCCA17549D60005ED064 /* 18-envelope.png */; };
 		FAB1BCCE17549D60005ED064 /* 21-skull.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB1BCCB17549D60005ED064 /* 21-skull.png */; };
 		FAB1BCCF17549D60005ED064 /* 58-bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = FAB1BCCC17549D60005ED064 /* 58-bookmark.png */; };
+		FAB44F031758AF94003E2A04 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB44F021758AF94003E2A04 /* MessageUI.framework */; };
 		FAD3E99F1753A91400618FFD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E99E1753A91400618FFD /* UIKit.framework */; };
 		FAD3E9A11753A91400618FFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E9A01753A91400618FFD /* Foundation.framework */; };
 		FAD3E9A31753A91400618FFD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD3E9A21753A91400618FFD /* CoreGraphics.framework */; };
@@ -62,6 +63,7 @@
 		FAB1BCCA17549D60005ED064 /* 18-envelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "18-envelope.png"; sourceTree = "<group>"; };
 		FAB1BCCB17549D60005ED064 /* 21-skull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "21-skull.png"; sourceTree = "<group>"; };
 		FAB1BCCC17549D60005ED064 /* 58-bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "58-bookmark.png"; sourceTree = "<group>"; };
+		FAB44F021758AF94003E2A04 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		FAD3E99B1753A91400618FFD /* Lokator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lokator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD3E99E1753A91400618FFD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAD3E9A01753A91400618FFD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB44F031758AF94003E2A04 /* MessageUI.framework in Frameworks */,
 				FA381DAF1753B3F300BA9C9E /* MapKit.framework in Frameworks */,
 				FAD3E9C41753AA2200618FFD /* QuartzCore.framework in Frameworks */,
 				FAD3E9C21753A9CE00618FFD /* CoreLocation.framework in Frameworks */,
@@ -130,6 +133,7 @@
 		FAD3E9921753A91400618FFD = {
 			isa = PBXGroup;
 			children = (
+				FAB44F021758AF94003E2A04 /* MessageUI.framework */,
 				FAD3E9A41753A91400618FFD /* Lokator */,
 				FAD3E99D1753A91400618FFD /* Frameworks */,
 				FAD3E99C1753A91400618FFD /* Products */,

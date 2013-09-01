@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+
 #import "RoundedViewController.h"
 
-@interface ListViewController : RoundedViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface ListViewController : RoundedViewController <UICollectionViewDataSource, UICollectionViewDelegate, MFMailComposeViewControllerDelegate> {
     BOOL isDrawerOpen;
     id selectedItem;
     __weak IBOutlet UIImageView *drawerMap;
